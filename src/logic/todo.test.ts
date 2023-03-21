@@ -55,6 +55,14 @@ describe("validation of todos is functional", () => {
     };
     expect(validateTodo(item, [])).toBeFalsy();
   });
+  it("whitespace todo value is rejected", () => {
+    const item: TodoItem = {
+      id: "testid",
+      value: "            \n          ",
+      done: false,
+    };
+    expect(validateTodo(item, [])).toBeFalsy();
+  });
   it("value with length > 255 is rejected", () => {
     const item: TodoItem = {
       id: "testid",
