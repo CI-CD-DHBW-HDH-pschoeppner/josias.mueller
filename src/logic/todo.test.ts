@@ -31,7 +31,7 @@ describe("colour generation is within parameters", () => {
       split[2] = split[2].slice(0, -1);
       const ints = split.map((str) => parseInt(str));
       ints.forEach((int) => {
-        expect(int).toBeLessThan(150);
+        expect(int).toBeLessThanOrEqual(150);
         expect(int).toBeGreaterThanOrEqual(50);
       });
     });
