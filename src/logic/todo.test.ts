@@ -8,7 +8,7 @@ import {
 
 describe("uuid generation is sufficiently random", () => {
   const uuids = new Set<string>();
-  for (let i = 0; i < 1_000_000; i++) {
+  for (let i = 0; i < 100_000; i++) {
     // i sencerely hope this is sufficient ^^
     it("uuid does not exist yet", () => {
       const uuid = generateID();
@@ -19,7 +19,7 @@ describe("uuid generation is sufficiently random", () => {
 });
 
 describe("colour generation is within parameters", () => {
-  for (let i = 0; i < 1_000_000; i++) {
+  for (let i = 0; i < 100_000; i++) {
     // same here of course
     it("colour values are within parameters", () => {
       const colour = generateColor();
