@@ -10,6 +10,8 @@ describe("uuid generation is sufficiently random", () => {
   const uuids = new Set<string>();
   for (let i = 0; i < 100_000; i++) {
     // i sencerely hope this is sufficient ^^
+    // it is 😂
+    // edit: I executed these tests! That took ages!
     it("uuid does not exist yet", () => {
       const uuid = generateID();
       expect(uuids.has(uuid)).toBeFalsy();
@@ -21,6 +23,7 @@ describe("uuid generation is sufficiently random", () => {
 describe("colour generation is within parameters", () => {
   for (let i = 0; i < 100_000; i++) {
     // same here of course
+    // at this point, a second occurrence would be considered statistically insignificant
     it("colour values are within parameters", () => {
       const colour = generateColor();
       const split = colour.split(",");
